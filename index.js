@@ -1,39 +1,45 @@
 
 /*Constantes que indicam o xp necessário para alcançar determinado nível*/
 
-const XP_PARA_BRONZE = 1000
-const XP_PARA_PRATA = 2000
-const XP_PARA_OURO = 5000
-const XP_PARA_PLATINA = 7000
-const XP_PARA_ASCENDENTE = 8000
-const XP_PARA_IMORTAL = 9000
-const XP_PARA_RADIANTE = 10000
+const XP_FOR_BRONZE = 1000
+const XP_FOR_SILVER = 2000
+const XP_FOR_GOLD = 5000
+const XP_FOR_PLATINUM = 7000
+const XP_FOR_ASCENDING = 8000
+const XP_FOR_IMORTAL = 9000
+const XP_FOR_RADIANT = 10000
 
-/*Ficha do jogador*/
+main()
 
-let nomeJogador = "Link"
-let nivelJogador
-let jogadorXP = 9300
+function main()
+{
+    /*Ficha do jogador*/
 
-/*Define o nivel do jogador baseado em seu XP*/
+    let playerName = "Link"
+    let playerLevel
+    let playerXP = 9300
 
-if(jogadorXP <= XP_PARA_BRONZE)
-    nivelJogador = "Ferro"
-else if(jogadorXP <= XP_PARA_PRATA)
-    nivelJogador = "Bronze"
-else if(jogadorXP <= XP_PARA_OURO)
-    nivelJogador = "Prata"
-else if(jogadorXP <= XP_PARA_PLATINA)
-    nivelJogador = "Ouro"
-else if(jogadorXP <= XP_PARA_ASCENDENTE)
-    nivelJogador = "Platina"
-else if(jogadorXP <= XP_PARA_IMORTAL)
-    nivelJogador = "Ascendente"
-else if(jogadorXP <= XP_PARA_RADIANTE)
-    nivelJogador = "Imortal"
-else
-    nivelJogador = "Radiante"
+    /*Define o nivel do jogador baseado em seu XP*/
 
-  /*Informa o nivel do jogador*/
+    if(playerXP <= XP_FOR_BRONZE)
+        playerLevel = "Ferro"
+    else if(playerXP <= XP_FOR_SILVER)
+        playerLevel = "Bronze"
+    else if(playerXP <= XP_FOR_GOLD)
+        playerLevel = "Prata"
+    else if(playerXP <= XP_FOR_PLATINUM)
+        playerLevel = "Ouro"
+    else if(playerXP <= XP_FOR_ASCENDING)
+        playerLevel = "Platina"
+    else if(playerXP <= XP_FOR_IMORTAL)
+        playerLevel = "Ascendente"
+    else if(playerXP <= XP_FOR_RADIANT)
+        playerLevel = "Imortal"
+    else
+        playerLevel = "Radiante"
 
-console.log("O herói de nome " + nomeJogador + " está no nível de " + nivelJogador)
+    /*Informa o nivel do jogador*/
+
+    console.log("O herói de nome " + playerName + " está no nível de " + playerLevel)
+
+}
