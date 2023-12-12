@@ -11,20 +11,30 @@ const XP_FOR_RADIANT = 10000
 
 /*===========================================================*/
 
+  /*Ficha com as informações do jogador (EXEMPLO)*/
+
+let player = {
+   
+    name : "Link",
+    XP: 9300,
+
+    level : 0
+}
+
+/*===========================================================*/
+
 main()
+
+/*===========================================================*/
+
 
 function main()
 {
-    /*Ficha do jogador (EXEMPLO)*/
-
-    let playerName = "Link"
-    let playerLevel
-    let playerXP = 9300
 
     /*Define o nivel do jogador e mostra na tela*/
     
-    playerLevel = setPlayerLevel(playerXP)
-    showPlayerLevel(playerName, playerLevel)
+    player.level = setPlayerLevel(player.XP)
+    showPlayerLevel(player.name, player.level)
 
 }
 
