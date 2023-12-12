@@ -9,17 +9,32 @@ const XP_FOR_ASCENDING = 8000
 const XP_FOR_IMORTAL = 9000
 const XP_FOR_RADIANT = 10000
 
+/*===========================================================*/
+
 main()
 
 function main()
 {
-    /*Ficha do jogador*/
+    /*Ficha do jogador (EXEMPLO)*/
 
     let playerName = "Link"
     let playerLevel
     let playerXP = 9300
 
-    /*Define o nivel do jogador baseado em seu XP*/
+    /*Define o nivel do jogador e mostra na tela*/
+    
+    playerLevel = setPlayerLevel(playerXP)
+    showPlayerLevel(playerName, playerLevel)
+
+}
+
+/*===========================================================*/
+
+/*Define o nivel do jogador baseado em seu XP*/
+
+function setPlayerLevel(playerXP)
+{
+    let playerLevel
 
     if(playerXP <= XP_FOR_BRONZE)
         playerLevel = "Ferro"
@@ -38,8 +53,12 @@ function main()
     else
         playerLevel = "Radiante"
 
-    /*Informa o nivel do jogador*/
+    return playerLevel
+}
 
-    console.log("O herói de nome " + playerName + " está no nível de " + playerLevel)
+/*Informa o nivel do jogador*/
 
+function showPlayerLevel(playerName, playerLevel = "Guest")
+{
+console.log(`O herói de nome ${playerName} está no nível de ${playerLevel}`)
 }
