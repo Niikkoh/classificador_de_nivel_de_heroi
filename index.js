@@ -9,16 +9,53 @@ const XP_FOR_ASCENDING = 8000
 const XP_FOR_IMORTAL = 9000
 const XP_FOR_RADIANT = 10000
 
+/*Constantes que contém um exemplo de ficha de jogador*/
+
+const PLAYER_NAME_EXAMPLE = "Link"
+const PLAYER_XP_EXAMPLE = 7500
+
 /*===========================================================*/
 
-  /*Ficha com as informações do jogador (EXEMPLO)*/
+  /*Classe do jogador*/
 
-let player = {
+class player {
    
-    name : "Link",
-    XP: 9300,
+    constructor(name, xp)
+    {
+        this.name = name
+        this.xp = xp
+        this.level = "No Level"
+    }
 
-    level : 0
+    /*Define o nivel do jogador baseado em seu XP*/
+
+    setPlayerLevel()
+    {
+        if(this.xp <= XP_FOR_BRONZE)
+            this.level = "Ferro"
+        else if(this.xp <= XP_FOR_SILVER)
+            this.level= "Bronze"
+        else if(this.xpP <= XP_FOR_GOLD)
+            this.level = "Prata"
+        else if(this.xp <= XP_FOR_PLATINUM)
+            this.level = "Ouro"
+        else if(this.xp <= XP_FOR_ASCENDING)
+            this.level = "Platina"
+        else if(this.xpP <= XP_FOR_IMORTAL)
+            this.level = "Ascendente"
+        else if(this.xp <= XP_FOR_RADIANT)
+            this.level = "Imortal"
+        else
+            this.level = "Radiante"
+    }
+
+    /*Informa o nivel do jogador*/
+
+    showPlayerLevel()
+    {
+        console.log(`O herói de nome ${this.name} está no nível de ${this.level}`)
+    }
+    
 }
 
 /*===========================================================*/
@@ -30,44 +67,12 @@ main()
 function main()
 {
 
+    /*Instancia objeto jogador*/
+
+    let playerOne = new player(PLAYER_NAME_EXAMPLE, PLAYER_XP_EXAMPLE)
+
     /*Define o nivel do jogador e mostra na tela*/
     
-    player.level = setPlayerLevel(player.XP)
-    showPlayerLevel(player.name, player.level)
-
-}
-
-/*===========================================================*/
-
-/*Define o nivel do jogador baseado em seu XP*/
-
-function setPlayerLevel(playerXP)
-{
-    let playerLevel
-
-    if(playerXP <= XP_FOR_BRONZE)
-        playerLevel = "Ferro"
-    else if(playerXP <= XP_FOR_SILVER)
-        playerLevel = "Bronze"
-    else if(playerXP <= XP_FOR_GOLD)
-        playerLevel = "Prata"
-    else if(playerXP <= XP_FOR_PLATINUM)
-        playerLevel = "Ouro"
-    else if(playerXP <= XP_FOR_ASCENDING)
-        playerLevel = "Platina"
-    else if(playerXP <= XP_FOR_IMORTAL)
-        playerLevel = "Ascendente"
-    else if(playerXP <= XP_FOR_RADIANT)
-        playerLevel = "Imortal"
-    else
-        playerLevel = "Radiante"
-
-    return playerLevel
-}
-
-/*Informa o nivel do jogador*/
-
-function showPlayerLevel(playerName, playerLevel = "Guest")
-{
-console.log(`O herói de nome ${playerName} está no nível de ${playerLevel}`)
+    playerOne.setPlayerLevel()
+    playerOne.showPlayerLevel()
 }
